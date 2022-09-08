@@ -1,6 +1,6 @@
 #include <iostream>
 #include <fstream>
-#include "login.h"
+#include "empFunctions.h"
 
 using namespace std;
 struct Day{
@@ -8,15 +8,8 @@ struct Day{
     int day;
     int year;
 };
-struct Car {
-    string name;
-    double msrp;
-    double rent_cost_per_hour;
-};
-struct Renter{
-    string name;
 
-};
+void setup();
 
 int main() {
 
@@ -24,5 +17,12 @@ int main() {
         exit(1);
     }
 
+    registerEmp();
+    cout << employee_database.back().usn << endl;
+
     return 0;
+}
+
+void setup() {
+    
 }
