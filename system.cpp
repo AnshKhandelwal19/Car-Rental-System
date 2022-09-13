@@ -18,7 +18,6 @@ int main() {
     }
 
     registerEmp();
-    cout << employee_database.back().usn << endl;
 
     return 0;
 }

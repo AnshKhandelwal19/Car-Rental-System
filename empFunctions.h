@@ -34,4 +34,5 @@ void registerEmp() {
 
     Employee e = {usn, psw};
     employee_database.push_back(e);
+    writeToEmployeeDatabase(e);
 }

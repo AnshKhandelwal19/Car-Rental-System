@@ -24,3 +24,17 @@ vector<string> readFile(string filename) {
     }
     return adminLogins;
 }
+
+void writeToEmployeeDatabase(Employee e) {
+    fstream fout;
+    fout.open("admin.txt");
+
+    vector<string> file = readFile("admin.txt");
+    file.push_back(e.usn + "," + e.psw);
+
+    if(fout) {  
+        for(int i = 0; i < file.size(); i++) {
+            fout << file[i] << endl;
+        }
+    }
+}
