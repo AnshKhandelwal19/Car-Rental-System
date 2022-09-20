@@ -5,3 +5,6 @@ cars.txt
 
 #ignore cpp compiled file
 a.out
+
+#ignore .vscode
+settings.json

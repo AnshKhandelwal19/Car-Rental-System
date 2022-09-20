@@ -1,6 +1,6 @@
 #include <iostream>
 #include <fstream>
-#include "empFunctions.h"
+#include "HeaderFiles/empFunctions.h"
 
 using namespace std;
 struct Day{
@@ -19,9 +19,7 @@ int main() {
 
     registerEmp();
 
-    return 0;
-}
+    removeEmp("AryanP");
 
-void setup() {
-    
+    return 0;
 }

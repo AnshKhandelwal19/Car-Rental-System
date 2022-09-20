@@ -10,31 +10,37 @@ struct Employee{
 };
 
 vector<string> readFile(string filename) {
-    vector<string> adminLogins;
+    vector<string> fileInfo;
     string temp;
     fstream fout;
     fout.open(filename);
     if(fout) {  
         while(fout >> temp) {
-            adminLogins.push_back(temp);
+            fileInfo.push_back(temp);
         }
     }
     else {
         cout << "Error no file found" << endl;
     }
-    return adminLogins;
+    fout.close();
+    return fileInfo;
 }
 
-void writeToEmployeeDatabase(Employee e) {
+vector<string> getFileContent(string fileName) {
     fstream fout;
-    fout.open("admin.txt");
+    fout.open(fileName);
 
-    vector<string> file = readFile("TextFiles/admin.txt");
-    file.push_back(e.usn + "," + e.psw);
+    return readFile(fileName);
+}
+
+void writeToFile(vector<string> file, string fileName) {
+    fstream fout;
+    fout.open(fileName);
 
     if(fout) {  
         for(int i = 0; i < file.size(); i++) {
             fout << file[i] << endl;
         }
     }
+    fout.close();
 }
