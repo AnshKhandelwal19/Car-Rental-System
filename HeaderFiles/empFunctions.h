@@ -3,6 +3,7 @@
 #include "login.h"
 
 using namespace std;
+void printArray(vector<string> a);
 
 void registerEmp() {
     string usn, psw, verify_psw;
@@ -34,11 +35,28 @@ void registerEmp() {
 
     Employee e = {usn, psw};
     employee_database.push_back(e);
-    writeToEmployeeDatabase(e);
+
+    //code to add to database
+    vector<string> file = getFileContent("TextFiles/admin.txt");
+    file.push_back(e.usn + "," + e.psw);
+    writeToFile(file, "TextFiles/admin.txt");
 
     cout << "User " << usn << " has been added." << endl;
 }
 
-void removeEmp(string usn) {
-    
+void removeEmp(string name) {
+    vector<string> file = getFileContent("TextFiles/admin.txt");
+    for(int i = 0; i < employee_database.size(); i++) {
+        if(employee_database[i].usn == name) {
+            employee_database.erase(employee_database.begin()+i);
+            file.erase(file.begin() + i);
+        }
+    }
+    writeToFile(file, "admin.txt");
+}
+
+void printArray(vector<string> a) {
+    for(int i = 0; i < a.size(); i++) {
+        cout << a[i] << endl;
+    }
 }
