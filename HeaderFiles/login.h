@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include <vector>
 #include "file.h"
 
@@ -34,13 +35,14 @@ bool login() {
     string usn, psw;
     int pos, count = 0, tries = 0;
 
+    cout << "---------LOGIN---------" << endl;
     while(true) {
-        cout << "Username: ";
+        cout << "Username" << endl;
         cin >> usn;
         pos = findUser(usn);
         if(pos != -1) {
             while(count < 3) {
-                cout << "Password: ";
+                cout << "Password" << endl;
                 cin >> psw;
                 if(employee_database[pos].psw == psw) {
                     return true;

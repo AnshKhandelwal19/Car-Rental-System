@@ -52,7 +52,9 @@ void removeEmp(string name) {
             file.erase(file.begin() + i);
         }
     }
-    writeToFile(file, "admin.txt");
+    printArray(file);
+
+    writeToFile(file, "TextFiles/admin.txt");
 }
 
 void printArray(vector<string> a) {
