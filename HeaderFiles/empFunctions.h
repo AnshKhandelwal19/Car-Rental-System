@@ -44,7 +44,7 @@ void registerEmp() {
     vector<string> file = getFileContent("TextFiles/admin.txt");
     file.push_back(e.usn + "," + e.psw);
     writeToFile(file, "TextFiles/admin.txt");
-
+    system("clear");
     cout << "User " << usn << " has been added." << endl;
 }
 
@@ -61,6 +61,8 @@ void removeEmp() {
         }
     }
     writeToFile(file, "TextFiles/admin.txt");
+    system("clear");
+    cout << "User " << name << " has been removed" << endl;
 }
 
 void printArray(vector<string> a) {
