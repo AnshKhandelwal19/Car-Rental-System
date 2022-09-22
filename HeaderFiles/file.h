@@ -39,9 +39,8 @@ vector<string> getFileContent(string fileName) {
 }
 
 void writeToFile(vector<string> file, string fileName) {
-    fstream fout;
-    fout.open(fileName);
-
+    ofstream fout;
+    fout.open(fileName, ofstream::out | ofstream::trunc); 
     if(fout) {  
         for(int i = 0; i < file.size(); i++) {
             fout << file[i] << endl;

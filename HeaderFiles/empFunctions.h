@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <string>
 #include "login.h"
 
 using namespace std;
@@ -50,8 +51,14 @@ void registerEmp() {
 
 void removeEmp() {
     string name;
-    cout << "Employee UserName to be removed: " << endl;
+    char validate;
+    cout << "Employee Username to be removed: " << endl;
     cin >> name;
+
+    cout << "Are you sure? (Y/N)" << endl;
+    cin >> validate;
+    if(tolower(validate) != 'Y')
+        return;
 
     vector<string> file = getFileContent("TextFiles/admin.txt");
     for(int i = 0; i < employee_database.size(); i++) {
@@ -62,7 +69,6 @@ void removeEmp() {
     }
     writeToFile(file, "TextFiles/admin.txt");
     system("clear");
-    cout << "User " << name << " has been removed" << endl;
 }
 
 void printArray(vector<string> a) {

@@ -9,8 +9,16 @@ char getFirstInput();
 char employeeCommandsDisplay();
 char customerCommandsDisplay();
 char inventoryCommandsDisplay();
+void run();
 
 int main() {
+    
+    run();
+
+    return 0;
+}
+
+void run() {
     //define variables
     char input;
     while(true) {
@@ -43,8 +51,6 @@ int main() {
                 break;
         }
     }
-
-    return 0;
 }
 
 char getFirstInput() {
