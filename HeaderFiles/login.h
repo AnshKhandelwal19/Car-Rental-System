@@ -5,6 +5,11 @@
 
 using namespace std;
 
+//Function Definitions
+int findUser(string);
+void createEmployeeDatabase(vector<string>);
+bool login();
+
 vector<Employee> employee_database;
 
 int findUser(string findUsn) {

@@ -4,6 +4,11 @@
 
 using namespace std;
 
+//Function Definitions
+vector<string> readFile(string);
+vector<string> getFileContent(string);
+void writeToFile(vector<string>, string);
+
 struct Employee{
     string usn;
     string psw;

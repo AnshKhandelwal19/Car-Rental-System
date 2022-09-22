@@ -3,7 +3,11 @@
 #include "login.h"
 
 using namespace std;
-void printArray(vector<string> a);
+
+//Function definitions
+void registerEmp();
+void removeEmp();
+void printArray(vector<string>);
 
 void registerEmp() {
     string usn, psw, verify_psw;
@@ -44,7 +48,11 @@ void registerEmp() {
     cout << "User " << usn << " has been added." << endl;
 }
 
-void removeEmp(string name) {
+void removeEmp() {
+    string name;
+    cout << "Employee UserName to be removed: " << endl;
+    cin >> name;
+
     vector<string> file = getFileContent("TextFiles/admin.txt");
     for(int i = 0; i < employee_database.size(); i++) {
         if(employee_database[i].usn == name) {
@@ -52,8 +60,6 @@ void removeEmp(string name) {
             file.erase(file.begin() + i);
         }
     }
-    printArray(file);
-
     writeToFile(file, "TextFiles/admin.txt");
 }
 

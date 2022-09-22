@@ -4,6 +4,9 @@
 
 using namespace std;
 
+//Function Definitions
+//vector<Car> createInventory();
+
 struct Car {
     string name;
     string style; // Sedan/Coupe/SUV
@@ -12,8 +15,6 @@ struct Car {
 
 vector<Car> createInventory() {
     vector<Car> rV;
-
-    
-
     return rV;
 }
+
