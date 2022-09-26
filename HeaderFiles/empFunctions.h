@@ -56,8 +56,10 @@ void removeEmp() {
 
     cout << "Are you sure? (Y/N)" << endl;
     cin >> validate;
-    if(tolower(validate) != 'Y')
+    if(tolower(validate) != 'y') {
+        system("clear");
         return;
+    }
 
     vector<string> file = getFileContent("TextFiles/admin.txt");
     for(int i = 0; i < employee_database.size(); i++) {
